@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+﻿import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase, isSupabaseConfigured } from '../lib/supabase';
 
 const AuthContext = createContext();
@@ -8,11 +8,11 @@ export const DEMO_ACCOUNTS = {
   teacher: {
     id: 't1111111-1111-1111-1111-111111111111',
     email: 'co.hoa@tieuhoc.edu.vn',
-    full_name: 'Cô Nguyễn Thị Hoa',
+    full_name: 'Cô Lê Thị Thanh Hương',
     role: 'teacher',
     phone: '0912 345 678',
     avatar_url: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
-    title: 'GVCN Lớp 3A1'
+    title: 'GVCN Lớp 4A'
   },
   student: {
     id: 's2222222-2222-2222-2222-222222222222',
@@ -22,7 +22,7 @@ export const DEMO_ACCOUNTS = {
     student_code: 'HS2026-001',
     phone: '0988 111 222',
     avatar_url: 'https://images.unsplash.com/photo-1544717305-2782549b5136?w=150&auto=format&fit=crop&q=80',
-    class_name: 'Lớp 3A1'
+    class_name: 'Lớp 4A'
   },
   parent: {
     id: 'p3333333-3333-3333-3333-333333333333',
