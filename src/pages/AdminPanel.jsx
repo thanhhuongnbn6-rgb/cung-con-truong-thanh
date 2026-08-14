@@ -1,12 +1,14 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useAuth, DEMO_ACCOUNTS } from '../context/AuthContext';
 import { useClass } from '../context/ClassContext';
 import { isSupabaseConfigured } from '../lib/supabase';
 import { ShieldAlert, Users, Database, Sparkles, CheckCircle2, PlusCircle, UserCheck } from 'lucide-react';
+import { CreateClassModal } from '../components/features/CreateClassModal';
 
 export const AdminPanel = () => {
   const { switchDemoRole } = useAuth();
   const { currentClass, students } = useClass();
+  const [showCreateClassModal, setShowCreateClassModal] = useState(false);
 
   const [classList, setClassList] = useState([
     { id: 'c1', name: 'Lớp 4A', grade: 3, teacher: 'Cô Lê Thị Thanh Hương', count: 24, code: 'L4A-8899' },
@@ -107,6 +109,12 @@ export const AdminPanel = () => {
       <div className="bg-white rounded-3xl p-6 border border-purple-100 shadow-sm space-y-4">
         <div className="flex items-center justify-between">
           <h3 className="font-black text-slate-800 text-lg">Danh Sách Lớp Chủ Nhiệm Khối 1 - 5</h3>
+          <button
+            onClick={() => setShowCreateClassModal(true)}
+            className="bg-purple-600 hover:bg-purple-700 text-white font-extrabold text-xs px-4 py-2 rounded-xl flex items-center gap-1.5 shadow transition"
+          >
+            <PlusCircle size={16} /> Khởi Tạo Lớp Mới & Sinh Mã QR
+          </button>
         </div>
 
         <div className="overflow-x-auto">
@@ -134,6 +142,10 @@ export const AdminPanel = () => {
           </table>
         </div>
       </div>
+
+      {showCreateClassModal && (
+        <CreateClassModal onClose={() => setShowCreateClassModal(false)} />
+      )}
     </div>
   );
 };
