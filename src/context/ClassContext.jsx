@@ -5,7 +5,7 @@ import { triggerConfetti, playSoundEffect } from '../lib/helpers';
 
 const ClassContext = createContext();
 
-// Initial Realistic Classroom Students (Lớp 3A1 - 24 Học Sinh)
+// Initial Realistic Classroom Students (Lớp 4A - 24 Học Sinh)
 const INITIAL_STUDENTS = [
   { id: 's2222222-2222-2222-2222-222222222222', student_code: 'HS2026-001', full_name: 'Trần Minh An', nickname: 'Bé Bông', avatar_color: '#10B981', seat: 1, stars: 45, parent_name: 'Trần Văn Nam', parent_phone: '0903 888 999' },
   { id: 's-002', student_code: 'HS2026-002', full_name: 'Nguyễn Hoàng Bảo', nickname: 'Bảo Bảo', avatar_color: '#F59E0B', seat: 2, stars: 38, parent_name: 'Nguyễn Thanh Tùng', parent_phone: '0912 111 222' },
@@ -43,9 +43,9 @@ const INITIAL_ATTENDANCE = {
 
 // Initial Reward Log
 const INITIAL_REWARDS = [
-  { id: 'r1', student_id: 's2222222-2222-2222-2222-222222222222', points: 5, category: 'academic', reason: 'Phát biểu hăng hái môn Toán bài Phép nhân', awarded_by: 'Cô Nguyễn Thị Hoa', status: 'approved', created_at: new Date(Date.now() - 3600000 * 4).toISOString() },
+  { id: 'r1', student_id: 's2222222-2222-2222-2222-222222222222', points: 5, category: 'academic', reason: 'Phát biểu hăng hái môn Toán bài Phép nhân', awarded_by: 'Cô Lê Thị Thanh Hương', status: 'approved', created_at: new Date(Date.now() - 3600000 * 4).toISOString() },
   { id: 'r2', student_id: 's2222222-2222-2222-2222-222222222222', points: 3, category: 'home_chore', reason: 'Tự giác gấp chăn màn & dọn góc học tập', awarded_by: 'Bố Trần Văn Nam', status: 'approved', created_at: new Date(Date.now() - 3600000 * 24).toISOString() },
-  { id: 'r3', student_id: 's-003', points: 5, category: 'behavior', reason: 'Giúp đỡ bạn lau bảng sau giờ học', awarded_by: 'Cô Nguyễn Thị Hoa', status: 'approved', created_at: new Date(Date.now() - 3600000 * 5).toISOString() },
+  { id: 'r3', student_id: 's-003', points: 5, category: 'behavior', reason: 'Giúp đỡ bạn lau bảng sau giờ học', awarded_by: 'Cô Lê Thị Thanh Hương', status: 'approved', created_at: new Date(Date.now() - 3600000 * 5).toISOString() },
   { id: 'r4', student_id: 's2222222-2222-2222-2222-222222222222', points: 4, category: 'home_chore', reason: 'Lễ phép chào ông bà và rửa bát giúp mẹ', awarded_by: 'Bố Trần Văn Nam', status: 'pending', created_at: new Date(Date.now() - 3600000 * 2).toISOString() },
 ];
 
@@ -80,10 +80,10 @@ const INITIAL_CHAT = [
     id: 'msg-1',
     class_id: 'c1',
     sender_id: 't1111111-1111-1111-1111-111111111111',
-    sender_name: 'Cô Nguyễn Thị Hoa (GVCN)',
+    sender_name: 'Cô Lê Thị Thanh Hương (GVCN)',
     receiver_id: null, // Class Announcement
     type: 'announcement',
-    content: '📢 THÔNG BÁO TỚI PHỤ HUYNH LỚP 3A1:\nThứ 6 tuần này lớp mình sẽ tham gia hoạt động trải nghiệm "Em làm họa sĩ nhí". Kính mời phụ huynh nhắc các con chuẩn bị màu vẽ và bút chì ạ!',
+    content: '📢 THÔNG BÁO TỚI PHỤ HUYNH Lớp 4A:\nThứ 6 tuần này lớp mình sẽ tham gia hoạt động trải nghiệm "Em làm họa sĩ nhí". Kính mời phụ huynh nhắc các con chuẩn bị màu vẽ và bút chì ạ!',
     created_at: new Date(Date.now() - 3600000 * 28).toISOString()
   },
   {
@@ -100,7 +100,7 @@ const INITIAL_CHAT = [
     id: 'msg-3',
     class_id: 'c1',
     sender_id: 't1111111-1111-1111-1111-111111111111',
-    sender_name: 'Cô Nguyễn Thị Hoa (GVCN)',
+    sender_name: 'Cô Lê Thị Thanh Hương (GVCN)',
     receiver_id: 'p3333333-3333-3333-3333-333333333333',
     type: 'direct',
     content: 'Dạ chào anh Nam, cô đã đón bé Minh An vào lớp an toàn rồi nhé! Anh yên tâm ạ.',
@@ -112,9 +112,9 @@ const INITIAL_CHAT = [
 const INITIAL_DIARY = [
   {
     id: 'd1',
-    title: '🎉 Lớp 3A1 đạt Giải Nhất Hội thi "Văn nghệ Khối 3"',
-    content: 'Hôm nay các bạn học sinh Lớp 3A1 đã hoàn thành xuất sắc tiết mục múa "Bông hoa mừng cô". Cô khen tinh thần đoàn kết và tập luyện hăng hái của cả lớp!',
-    author_name: 'Cô Nguyễn Thị Hoa',
+    title: '🎉 Lớp 4A đạt Giải Nhất Hội thi "Văn nghệ Khối 3"',
+    content: 'Hôm nay các bạn học sinh Lớp 4A đã hoàn thành xuất sắc tiết mục múa "Bông hoa mừng cô". Cô khen tinh thần đoàn kết và tập luyện hăng hái của cả lớp!',
+    author_name: 'Cô Lê Thị Thanh Hương',
     media_urls: [
       'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&auto=format&fit=crop&q=80'
@@ -126,7 +126,7 @@ const INITIAL_DIARY = [
     id: 'd2',
     title: '🌱 Giờ sinh hoạt lớp: "Tập làm người bạn tốt"',
     content: 'Cùng ngắm nhìn những nụ cười rạng rỡ của các con trong giờ sinh hoạt chủ đề tình bạn thân thiết. Bạn nào cũng hứa sẽ luôn giúp đỡ và yêu thương nhau.',
-    author_name: 'Cô Nguyễn Thị Hoa',
+    author_name: 'Cô Lê Thị Thanh Hương',
     media_urls: [
       'https://images.unsplash.com/photo-1544717305-2782549b5136?w=800&auto=format&fit=crop&q=80'
     ],
@@ -140,11 +140,11 @@ export const ClassProvider = ({ children }) => {
   
   const [currentClass] = useState({
     id: 'c1',
-    name: 'Lớp 3A1',
-    grade_level: 3,
+    name: 'Lớp 4A',
+    grade_level: 4,
     academic_year: '2025-2026',
-    join_code: 'L3A1-8899',
-    teacher_name: 'Cô Nguyễn Thị Hoa'
+    join_code: 'L4A-8899',
+    teacher_name: 'Cô Lê Thị Thanh Hương'
   });
 
   const [students, setStudents] = useState(INITIAL_STUDENTS);
