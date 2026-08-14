@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useClass } from '../../context/ClassContext';
 import { formatDateVN } from '../../lib/helpers';
@@ -26,7 +26,7 @@ export const Header = () => {
 
   const getRoleLabel = (role) => {
     switch (role) {
-      case 'teacher': return { text: 'GVCN Lớp 3A1', bg: 'bg-amber-400 text-slate-900', icon: '👩‍🏫' };
+      case 'teacher': return { text: 'GVCN Lớp 4A', bg: 'bg-amber-400 text-slate-900', icon: '👩‍🏫' };
       case 'student': return { text: 'Học sinh', bg: 'bg-emerald-400 text-slate-900', icon: '🎒' };
       case 'parent': return { text: 'Phụ huynh', bg: 'bg-sky-400 text-slate-900', icon: '👨‍👩‍👧' };
       case 'admin': return { text: 'Quản trị viên', bg: 'bg-purple-400 text-slate-900', icon: '⚡' };
@@ -42,7 +42,7 @@ export const Header = () => {
       <div className="max-w-7xl mx-auto px-4 py-2 flex flex-wrap items-center justify-between border-b border-emerald-600/50 text-xs sm:text-sm">
         <div className="flex items-center gap-3">
           <span className="bg-amber-400 text-emerald-950 px-2 py-0.5 rounded-full font-bold text-xs flex items-center gap-1">
-            <Sparkles size={13} /> TIỂU HỌC NHÀ TRƯỜNG
+            <Sparkles size={13} /> TRƯỜNG TIỂU HỌC NGUYỄN BÁ NGỌC
           </span>
           <span className="hidden md:flex items-center gap-1 text-emerald-100">
             <Calendar size={13} /> {formatDateVN(new Date().toISOString())}
