@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { calculateBehaviorEvaluation, formatDateVN } from '../../lib/helpers';
 import { Printer, X, Award, CheckCircle, Calendar, Star } from 'lucide-react';
 
@@ -64,11 +64,11 @@ export const ExportReportModal = ({ student, classInfo, attendanceRecords = [], 
             </div>
             <div>
               <span className="text-slate-500 font-medium">Mã học sinh / Lớp:</span>
-              <p className="font-extrabold text-slate-800 text-base">{student.student_code} - {classInfo?.name || 'Lớp 3A1'}</p>
+              <p className="font-extrabold text-slate-800 text-base">{student.student_code} - {classInfo?.name || 'Lớp 4A'}</p>
             </div>
             <div>
               <span className="text-slate-500 font-medium">Giáo viên chủ nhiệm:</span>
-              <p className="font-bold text-slate-700">{classInfo?.teacher_name || 'Cô Nguyễn Thị Hoa'}</p>
+              <p className="font-bold text-slate-700">{classInfo?.teacher_name || 'Cô Lê Thị Thanh Hương'}</p>
             </div>
             <div>
               <span className="text-slate-500 font-medium">Phụ huynh liên kết:</span>
@@ -143,7 +143,7 @@ export const ExportReportModal = ({ student, classInfo, attendanceRecords = [], 
             <div>
               <p className="uppercase text-slate-400">Giáo viên chủ nhiệm</p>
               <div className="h-16"></div>
-              <p className="font-bold text-emerald-800">{classInfo?.teacher_name || 'Cô Nguyễn Thị Hoa'}</p>
+              <p className="font-bold text-emerald-800">{classInfo?.teacher_name || 'Cô Lê Thị Thanh Hương'}</p>
             </div>
           </div>
         </div>
