@@ -1,4 +1,4 @@
--- ============================================================================
+﻿-- ============================================================================
 -- CÙNG CON TRƯỞNG THÀNH - HỆ THỐNG QUẢN LÝ LỚP HỌC TIỂU HỌC (SUPABASE DB SCHEMA)
 -- Compatible with Supabase PostgreSQL, Realtime & Row Level Security (RLS)
 -- ============================================================================
@@ -26,11 +26,11 @@ CREATE TABLE IF NOT EXISTS public.profiles (
 -- ----------------------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS public.classes (
     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name TEXT NOT NULL,                             -- e.g. "Lớp 3A1"
+    name TEXT NOT NULL,                             -- e.g. "Lớp 4A"
     grade_level INT NOT NULL CHECK (grade_level BETWEEN 1 AND 5),
     academic_year TEXT NOT NULL,                     -- e.g. "2025-2026"
     teacher_id UUID NOT NULL REFERENCES public.profiles(id) ON DELETE RESTRICT,
-    join_code TEXT UNIQUE NOT NULL,                 -- e.g. "L3A1-8899"
+    join_code TEXT UNIQUE NOT NULL,                 -- e.g. "L4A-8899"
     created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
