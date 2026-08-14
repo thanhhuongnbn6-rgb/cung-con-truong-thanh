@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useAuth, DEMO_ACCOUNTS } from '../context/AuthContext';
 import { useClass } from '../context/ClassContext';
 import { isSupabaseConfigured } from '../lib/supabase';
@@ -9,7 +9,7 @@ export const AdminPanel = () => {
   const { currentClass, students } = useClass();
 
   const [classList, setClassList] = useState([
-    { id: 'c1', name: 'Lớp 3A1', grade: 3, teacher: 'Cô Nguyễn Thị Hoa', count: 24, code: 'L3A1-8899' },
+    { id: 'c1', name: 'Lớp 4A', grade: 3, teacher: 'Cô Lê Thị Thanh Hương', count: 24, code: 'L4A-8899' },
     { id: 'c2', name: 'Lớp 1A2', grade: 1, teacher: 'Thầy Trần Văn Đức', count: 28, code: 'L1A2-1122' },
     { id: 'c3', name: 'Lớp 5A3', grade: 5, teacher: 'Cô Lê Thị Mai', count: 26, code: 'L5A3-5566' }
   ]);
