@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useClass } from '../../context/ClassContext';
 import { useAuth } from '../../context/AuthContext';
 import { 
@@ -168,7 +168,7 @@ export const ParentChat = () => {
               </div>
               <div>
                 <h4 className="font-extrabold text-sm text-slate-800">
-                  {profile?.role === 'parent' ? 'GVCN Cô Nguyễn Thị Hoa' : 'Phụ huynh anh Trần Văn Nam (Bố bé Minh An)'}
+                  {profile?.role === 'parent' ? 'GVCN Cô Lê Thị Thanh Hương' : 'Phụ huynh anh Trần Văn Nam (Bố bé Minh An)'}
                 </h4>
                 <span className="text-[10px] text-emerald-600 font-bold flex items-center gap-1">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Sẵn sàng trao đổi trực tiếp
@@ -228,7 +228,7 @@ export const ParentChat = () => {
         <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl p-6 max-w-lg w-full shadow-2xl border border-slate-200 animate-pop-in">
             <h3 className="font-extrabold text-slate-800 text-base mb-1">Tạo Thông Báo Lớp Chủ Nhiệm</h3>
-            <p className="text-xs text-slate-500 mb-4">Thông báo sẽ hiển thị ngay cho toàn bộ Phụ huynh Lớp 3A1.</p>
+            <p className="text-xs text-slate-500 mb-4">Thông báo sẽ hiển thị ngay cho toàn bộ Phụ huynh Lớp 4A.</p>
 
             <form onSubmit={handleCreateAnnouncement} className="space-y-4">
               <textarea
