@@ -12,9 +12,14 @@ import {
   Search, 
   Grid, 
   List,
-  FileText
+  FileText,
+  PlusCircle,
+  FileSpreadsheet,
+  QrCode
 } from 'lucide-react';
 import { formatDateVN } from '../../lib/helpers';
+import { CreateClassModal } from './CreateClassModal';
+import { ImportStudentsModal } from './ImportStudentsModal';
 
 export const AttendanceBoard = () => {
   const { students, attendance, markAttendance, currentClass } = useClass();
@@ -26,6 +31,8 @@ export const AttendanceBoard = () => {
   const [activeNoteModal, setActiveNoteModal] = useState(null);
   const [noteText, setNoteText] = useState('');
   const [notifySuccess, setNotifySuccess] = useState(false);
+  const [showCreateClassModal, setShowCreateClassModal] = useState(false);
+  const [showImportStudentsModal, setShowImportStudentsModal] = useState(false);
 
   const dayAttendance = attendance[selectedDate] || {};
 
@@ -86,7 +93,19 @@ export const AttendanceBoard = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowCreateClassModal(true)}
+              className="bg-amber-400 hover:bg-amber-500 text-slate-950 px-3 py-2 rounded-xl text-xs font-black flex items-center gap-1.5 shadow transition"
+            >
+              <PlusCircle size={15} /> Tạo Lớp Mới (QR)
+            </button>
+            <button
+              onClick={() => setShowImportStudentsModal(true)}
+              className="bg-white/20 hover:bg-white/30 text-white px-3 py-2 rounded-xl text-xs font-black flex items-center gap-1.5 shadow border border-white/30 transition"
+            >
+              <FileSpreadsheet size={15} /> Import Excel Học Sinh
+            </button>
             <input
               type="date"
               value={selectedDate}
@@ -95,7 +114,7 @@ export const AttendanceBoard = () => {
             />
             <button
               onClick={handleSendParentNotification}
-              className="bg-amber-400 hover:bg-amber-500 text-slate-900 px-4 py-2 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-lg transition"
+              className="bg-emerald-950 hover:bg-emerald-900 text-amber-300 px-4 py-2 rounded-xl text-xs font-black flex items-center gap-1.5 shadow-lg transition"
             >
               <Send size={15} /> Gửi Thông Báo Phụ Huynh
             </button>
@@ -380,6 +399,16 @@ export const AttendanceBoard = () => {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Create Class Modal */}
+      {showCreateClassModal && (
+        <CreateClassModal onClose={() => setShowCreateClassModal(false)} />
+      )}
+
+      {/* Import Students Modal */}
+      {showImportStudentsModal && (
+        <ImportStudentsModal onClose={() => setShowImportStudentsModal(false)} />
       )}
     </div>
   );
