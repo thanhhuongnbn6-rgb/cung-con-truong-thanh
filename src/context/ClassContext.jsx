@@ -138,7 +138,7 @@ const INITIAL_DIARY = [
 export const ClassProvider = ({ children }) => {
   const { profile } = useAuth();
   
-  const [currentClass] = useState({
+  const [currentClass, setCurrentClass] = useState({
     id: 'c1',
     name: 'Lớp 4A',
     grade_level: 4,
@@ -146,6 +146,10 @@ export const ClassProvider = ({ children }) => {
     join_code: 'L4A-8899',
     teacher_name: 'Cô Lê Thị Thanh Hương'
   });
+
+  const addClass = (newClassObj) => {
+    setCurrentClass(newClassObj);
+  };
 
   const [students, setStudents] = useState(INITIAL_STUDENTS);
   const [attendance, setAttendance] = useState(INITIAL_ATTENDANCE);
@@ -310,6 +314,7 @@ export const ClassProvider = ({ children }) => {
     <ClassContext.Provider
       value={{
         currentClass,
+        addClass,
         students,
         setStudents,
         attendance,
