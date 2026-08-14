@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useAuth, DEMO_ACCOUNTS } from '../context/AuthContext';
 import { GraduationCap, Mail, Lock, User, Shield, Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -128,7 +128,7 @@ export const AuthPage = () => {
                     required
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
-                    placeholder="VD: Cô Nguyễn Thị Hoa / Trần Minh An"
+                    placeholder="VD: Cô Lê Thị Thanh Hương / Trần Minh An"
                     className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-emerald-500 bg-slate-50"
                   />
                 </div>
